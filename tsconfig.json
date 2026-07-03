@@ -23,6 +23,7 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "resolveJsonModule": true,
-    "types": ["jest"]
+    "types": ["jest"],
+    "strictPropertyInitialization": false
   }
 }
