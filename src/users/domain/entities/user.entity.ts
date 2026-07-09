@@ -13,9 +13,9 @@ export class UserEntity extends Entity<UserProps> {
     public readonly props: UserProps,
     id?: string,
   ) {
-    UserEntity.validate(props),
-    super(props, id);
-    this.props.createdAt = this.props.createdAt ?? new Date();
+    UserEntity.validate(props)
+    super(props, id)
+    this.props.createdAt = this.props.createdAt ?? new Date()
   }
 
   update(value: string): void {
