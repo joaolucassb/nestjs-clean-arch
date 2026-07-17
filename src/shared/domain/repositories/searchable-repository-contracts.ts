@@ -97,7 +97,7 @@ export class SearchParams {
   }
 }
 
-export class SarchResult<E extends Entity, Filter = string> {
+export class SearchResult<E extends Entity, Filter = string> {
   readonly items: E[];
   readonly total: number;
   readonly currentPage: number;
@@ -136,7 +136,7 @@ export interface SearchableRepositoryInterface<
   E extends Entity,
   Filter = string,
   SearchInput = SearchParams,
-  SearchOutput = SarchResult<E, Filter>,
+  SearchOutput = SearchResult<E, Filter>,
 > extends RepositoryInterface<E> {
   search(props: SearchInput): Promise<SearchOutput>;
 }
