@@ -1,4 +1,4 @@
-import { SarchResult, SearchParams } from '../../searchable-repository-contracts';
+import { SearchResult, SearchParams } from '../../searchable-repository-contracts';
 
 describe('Searchable Repository unit tests', () => {
   describe('SearchParams tests', () => {
@@ -136,7 +136,7 @@ describe('Searchable Repository unit tests', () => {
 
   describe('SearchResult tests', () => {
     it('Constructor props', () => {
-      let sut = new SarchResult({
+      let sut = new SearchResult({
         items: ['test1', 'test2', 'test3', 'test4'] as any,
         total: 4,
         currentPage: 1,
@@ -158,7 +158,7 @@ describe('Searchable Repository unit tests', () => {
         }
       )
 
-      sut = new SarchResult({
+      sut = new SearchResult({
         items: ['test1', 'test2', 'test3', 'test4'] as any,
         total: 4,
         currentPage: 1,
@@ -180,7 +180,7 @@ describe('Searchable Repository unit tests', () => {
         }
       )
 
-      sut = new SarchResult({
+      sut = new SearchResult({
         items: ['test1', 'test2', 'test3', 'test4'] as any,
         total: 4,
         currentPage: 1,
@@ -191,7 +191,7 @@ describe('Searchable Repository unit tests', () => {
       })
       expect(sut.lastPage).toBe(1);
 
-      sut = new SarchResult({
+      sut = new SearchResult({
         items: ['test1', 'test2', 'test3', 'test4'] as any,
         total: 54,
         currentPage: 1,
