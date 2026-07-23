@@ -29,7 +29,7 @@ export class UserInMemoryRepository
 
   protected async applyFilter(
     items: UserEntity[],
-    filter: UserRepository.Filter,
+    filter: UserRepository.Filter | null,
   ): Promise<UserEntity[]> {
     if (!filter) {
       return items;
