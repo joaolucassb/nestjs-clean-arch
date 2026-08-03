@@ -2,7 +2,7 @@ import { UserRepository } from '@/users/domain/repositories/user.repository';
 import { BadRequestError } from '../../../shared/application/errors/bad-request-error';
 import { UserEntity } from '@/users/domain/entities/user.entity';
 import { HashProvider } from '@/shared/application/providers/hash-provider';
-import { UserOutput } from '../dto/user-output';
+import { UserOutput, UserOutputMapper } from '../dto/user-output';
 import { UseCase as DefaultUseCase } from '@/shared/application/usecases/use-case';
 
 export namespace SignUpUseCase {
@@ -31,7 +31,7 @@ export namespace SignUpUseCase {
         Object.assign(input, { password: hashPassword }),
       );
       await this.userRepository.insert(entity);
-      return entity.toJSON();
+      return UserOutputMapper.toOutput(entity);
     }
   }
 }
